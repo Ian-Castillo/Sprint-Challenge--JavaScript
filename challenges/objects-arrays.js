@@ -76,7 +76,10 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
-console.log(universities)
+for (let i = 0; i < graduates.length; i++) {
+  universities.push(graduates[i].university);
+}
+console.log(universities.sort());
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -84,12 +87,22 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */
+
 const contactInfo = [];
+for (i = 0; i < graduates.length; i++) {
+  contactInfo.push(`${graduates[i].first_name} ${graduates[i].email}`);
+}
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
+
 const uni = [];
+for (i = 0; i < graduates.length; i++) {
+  graduates[i].university;
+  if (university === uni)
+    uni.push(graduates[i].university);
+}
 console.log(uni);
 
 
@@ -115,6 +128,9 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
+	const zoonames = zooAnimals.forEach(function(i){
+ 	 fullName.push(i.animal_name + " " + i.scientific_name);
+	});
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -123,7 +139,9 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = [];
+const lowerCase = zooAnimals.map((animal) => {
+  return animal.animal_name.tolowerCase();
+});
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
@@ -131,7 +149,9 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = [];
+const largerPopulation = zooAnimals.filter((animal) => {
+  return animal.population < "5";
+});
 console.log(largerPopulation);
 
 /* Request 4: .reduce() 
@@ -140,6 +160,10 @@ The zoos need to know their total animal population across the United States.  F
 
 */
 const populationTotal = 0;
+
+function getSum (populationTotal ) {
+  return populationTotal
+}
 console.log(populationTotal);
 
 
